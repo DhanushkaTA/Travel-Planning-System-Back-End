@@ -11,4 +11,6 @@ import java.util.List;
 public interface TravelPackageRepository extends JpaRepository<TravelPackage,String> {
     @Query(value = "select t from TravelPackage t order by t.travelPackage_Id desc")
     List<TravelPackage> getLastPackageId();
+
+    List<TravelPackage> getAllByTravelPackage_PacedDateIsLike(String date);
 }

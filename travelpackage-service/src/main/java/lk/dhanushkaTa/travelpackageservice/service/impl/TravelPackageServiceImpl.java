@@ -76,6 +76,13 @@ public class TravelPackageServiceImpl implements TravelPackageService {
         return this.generateNextPackagelId(lastPackageId);
     }
 
+    @Override
+    public List<TravelPackageDTO> getDetails(String date) {
+        List<TravelPackage> list = travelPackageRepository.getAllByTravelPackage_PacedDateIsLike(date);
+        return modelMapper.map(list,new TypeToken<List<TravelPackageDTO>>(){}.getType());
+
+    }
+
     private String generateNextPackagelId(String lastPackageId) {
         String date="";
         String newDate="";

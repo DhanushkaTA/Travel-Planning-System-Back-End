@@ -20,4 +20,8 @@ public interface TravelPackageService {
 
     String getNextId();
 
+    List<TravelPackageDTO> getDetails(String date);
+
+
+
 }

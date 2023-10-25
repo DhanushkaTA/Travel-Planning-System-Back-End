@@ -57,4 +57,10 @@ public class TravelPackageController {
     public ResponseUtil getNextPackageId(){
         return new ResponseUtil(200,"Next Package Id",travelPackageService.getNextId());
     }
+
+    @GetMapping(path = "get/details",params = {"date"})
+    public ResponseUtil getDetails(@RequestParam String date){
+        return new ResponseUtil(
+                200,"Details",travelPackageService.getDetails(date));
+    }
 }
