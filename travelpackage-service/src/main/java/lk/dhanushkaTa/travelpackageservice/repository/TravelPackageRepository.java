@@ -12,5 +12,6 @@ public interface TravelPackageRepository extends JpaRepository<TravelPackage,Str
     @Query(value = "select t from TravelPackage t order by t.travelPackage_Id desc")
     List<TravelPackage> getLastPackageId();
 
-    List<TravelPackage> getAllByTravelPackage_PacedDateIsLike(String date);
+    @Query(value = "select t from TravelPackage t where t.travelPackage_PacedDate like %?1%")
+    List<TravelPackage> getPackageDetailsByDate(String date);
 }

@@ -1,5 +1,6 @@
 package lk.dhanushkaTa.travelpackageservice.dto;
 
+import lk.dhanushkaTa.travelpackageservice.embeded.RoomCount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class TravelPackageDTO {
     private int travelPackage_HeadCount;
     private int travelPackage_No_Child;
     private int travelPackage_No_Adult;
+    private RoomCount roomCount;
     //@JsonFormat(pattern = "yyyy-mm-dd")
     private String travelPackage_StartDate;
     //@JsonFormat(pattern = "yyyy-mm-dd")

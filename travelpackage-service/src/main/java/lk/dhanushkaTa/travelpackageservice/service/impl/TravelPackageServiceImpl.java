@@ -78,7 +78,7 @@ public class TravelPackageServiceImpl implements TravelPackageService {
 
     @Override
     public List<TravelPackageDTO> getDetails(String date) {
-        List<TravelPackage> list = travelPackageRepository.getAllByTravelPackage_PacedDateIsLike(date);
+        List<TravelPackage> list = travelPackageRepository.getPackageDetailsByDate(date);
         return modelMapper.map(list,new TypeToken<List<TravelPackageDTO>>(){}.getType());
 
     }
