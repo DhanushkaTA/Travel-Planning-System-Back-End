@@ -53,27 +53,27 @@ public class HotelController {
     }
 
     @PostMapping(path = "save",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseUtil saveHotel(@RequestParam String hotel,
-                                  MultipartFile pic) throws DuplicateException, ProcessingException {
-        HotelDTO hotelDTO = null;
-        try {
-            hotelDTO = objectMapper.readValue(hotel, HotelDTO.class);
-        } catch (JsonProcessingException e) {
-            throw new ProcessingException(e.getMessage(),e);
-        }
+    public ResponseUtil saveHotel(@RequestPart("hotel") HotelDTO hotelDTO,
+                                  @RequestPart MultipartFile pic) throws DuplicateException, ProcessingException {
+//        HotelDTO hotelDTO = null;
+//        try {
+//            hotelDTO = objectMapper.readValue(hotel, HotelDTO.class);
+//        } catch (JsonProcessingException e) {
+//            throw new ProcessingException(e.getMessage(),e);
+//        }
         hotelService.saveHotel(hotelDTO,pic);
         return new ResponseUtil(200,"Hotel Saved",null);
     }
 
     @PutMapping(path = "update",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseUtil updateHotel(@RequestParam String hotel,
-                                    @RequestParam MultipartFile pic) throws NotFoundException, ProcessingException {
-        HotelDTO hotelDTO = null;
-        try {
-            hotelDTO = objectMapper.readValue(hotel, HotelDTO.class);
-        } catch (JsonProcessingException e) {
-            throw new ProcessingException(e.getMessage(),e);
-        }
+    public ResponseUtil updateHotel(@RequestPart("hotel") HotelDTO hotelDTO,
+                                    @RequestPart MultipartFile pic) throws NotFoundException, ProcessingException {
+//        HotelDTO hotelDTO = null;
+//        try {
+//            hotelDTO = objectMapper.readValue(hotel, HotelDTO.class);
+//        } catch (JsonProcessingException e) {
+//            throw new ProcessingException(e.getMessage(),e);
+//        }
         hotelService.updateHotelDetails(hotelDTO,pic);
         return new ResponseUtil(200,"Hotel updated",null);
     }
