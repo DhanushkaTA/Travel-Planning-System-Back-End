@@ -45,7 +45,7 @@ public class UserController {
             System.out.println(userDTO.getUserId()+" : "+userDTO.getUserIdNum());
         }
 
-        return new ResponseUtil(200,"User List",userService.findAll());
+        return new ResponseUtil(200,"User List",all);
     }
 
     @GetMapping(params = {"detail"})//api/v1/user?detail=xxxxx

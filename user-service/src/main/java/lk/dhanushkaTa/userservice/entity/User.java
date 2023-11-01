@@ -37,6 +37,9 @@ public class User {
     private String userDob;
     @Column(nullable = false)
     private String userGender;
+
+    @Column()
+    private String userContactNum;
     @Column(columnDefinition = "TEXT")
     private String nicImage1;
     @Column(columnDefinition = "TEXT")

@@ -40,5 +40,6 @@ public class FinancialServiceImpl implements FinancialService {
         System.out.println(details);
 
         return new FinancialDTO(totalValue,totalValue,null);
+
     }
 }

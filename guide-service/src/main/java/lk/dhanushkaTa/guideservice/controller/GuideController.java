@@ -42,22 +42,22 @@ public class GuideController {
 
     @PostMapping(path = "save",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveGuide(@RequestParam String guide,
-                                  @RequestParam MultipartFile nic,
-                                  @RequestParam MultipartFile guideId,
-                                  @RequestParam MultipartFile pic) throws DuplicateException, JsonProcessingException {
-        GuideDTO guideDTO = objectMapper.readValue(guide, GuideDTO.class);
+    public ResponseUtil saveGuide(@RequestPart("guide") GuideDTO guideDTO,
+                                  @RequestPart MultipartFile nic,
+                                  @RequestPart MultipartFile guideId,
+                                  @RequestPart MultipartFile pic) throws DuplicateException, JsonProcessingException {
+//        GuideDTO guideDTO = objectMapper.readValue(guide, GuideDTO.class);
         guideService.saveGuide(guideDTO,nic,guideId,pic);
         return new ResponseUtil(200,"Guide saved",null);
     }
 
     @PutMapping(path = "update",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateGuide(@RequestParam String guide,
-                                    @RequestParam MultipartFile nic,
-                                    @RequestParam MultipartFile guideId,
-                                    @RequestParam MultipartFile pic) throws NotFoundException, JsonProcessingException {
-        GuideDTO guideDTO = objectMapper.readValue(guide, GuideDTO.class);
+    public ResponseUtil updateGuide(@RequestPart("guide") GuideDTO guideDTO,
+                                    @RequestPart MultipartFile nic,
+                                    @RequestPart MultipartFile guideId,
+                                    @RequestPart MultipartFile pic) throws NotFoundException, JsonProcessingException {
+//        GuideDTO guideDTO = objectMapper.readValue(guide, GuideDTO.class);
         guideService.updateGuide(guideDTO,nic,guideId,pic);
         return new ResponseUtil(200,"Guide updated",null);
     }

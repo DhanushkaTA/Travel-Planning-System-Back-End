@@ -93,8 +93,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDTO> findAll() {
-        List<UserDTO> collect =
-                userRepository.findAll().stream().map(this::convertPathToByte).collect(Collectors.toList());
+//        List<UserDTO> collect =
+//                userRepository.findAll().stream().map(this::convertPathToByte).collect(Collectors.toList());
         return userRepository.findAll().stream().map(this::convertPathToByte).collect(Collectors.toList());
 
 //        return modelMapper.map(userRepository.findAll(),new TypeToken<List<UserDTO>>(){}.getType());

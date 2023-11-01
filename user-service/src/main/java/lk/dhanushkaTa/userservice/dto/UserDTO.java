@@ -20,6 +20,7 @@ public class UserDTO {
     private String userAddress;
     private String userDob;
     private String userGender;
+    private String userContactNum;
     private byte[] nicImage1;
     private byte[] nicImage2;
     private byte[] profileImage;
